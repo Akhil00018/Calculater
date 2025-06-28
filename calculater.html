@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head><style>
+        body{
+            margin: 0;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            height: 900px;
+        }
+        #cal{
+            background-color: hsl(0, 0%, 20%);
+            max-width: 500px;
+            border-radius:10px;
+            overflow:hidden;
+        }
+        #inner{
+            display: grid;
+            
+            grid-template-columns: repeat(4,2fr);
+            gap: 12px;
+            padding: 20px;
+
+
+        }
+        #disa{
+            background-color: hsl(0, 0%, 40%);
+            width:500px;
+            height: 90px;
+            border: none;
+            font-size: 40px;
+            color:aliceblue
+        }
+        button{
+            background-color: hsl(0, 0%, 0%);
+            border-radius:10px;
+            margin: 10px;
+            padding: 10px;
+            width:90px;
+            color: aliceblue;
+            cursor:pointer;
+            font-weight: bold;
+            font-size: 2em;
+            
+        }
+        button:hover{
+            background-color: hsl(0, 0%, 40%);
+        }
+        button:active{
+            background-color: hsl(0, 0%, 50%);
+        }
+        .btn{
+            background-color: hsl(189, 100%, 88%);
+            color: black;
+        }
+
+
+
+    </style>
+    </head>
+        <body >
+
+            <script>
+                
+                    function display(val){
+                        document.getElementById("disa").value +=val;
+
+                    }
+                    function calculate(){
+
+                        document.getElementById("disa").value=eval(document.getElementById("disa").value);
+                    }
+                    function cleardisplay(){
+                        document.getElementById("disa").value = "";
+
+
+                    }
+                    
+            </script>
+
+            <div id="cal">
+                <input id="disa" readonly>
+                <div id="inner">
+                    <button onclick="display('+')" class="btn">+</button>
+                    <button onclick="display('7')">7</button>
+                    <button onclick="display('8')">8</button>
+                    <button onclick="display('9')">9</button>
+                    <button onclick="display('-')" class="btn">-</button>
+                    <button onclick="display('4')">4</button>
+                    <button onclick="display('5')">5</button>
+                    <button onclick="display('6')">6</button>
+                    <button onclick="display('*')" class="btn">*</button>
+                    <button onclick="display('1')">1</button>
+                    <button onclick="display('2')">2</button>
+                    <button onclick="display('3')">3</button>
+                    <button onclick="display('/')" class="btn">/</button>
+                    <button onclick="display('0')">0</button>
+                    <button onclick="display('.')">.</button>
+                    <button onclick="calculate()" class="btn">=</button>
+                    <button onclick="cleardisplay()">C</button>
+                </div>
+
+            </div>
+        </body>
+    
+</html>
